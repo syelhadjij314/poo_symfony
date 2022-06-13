@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Hello ClasseController!{% endblock %} #}
+
+{% block body %}
+    {# <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style> #}
+
+    <div class="container">
+        <h1>
+            Liste Classes
+        </h1>
+        <a name="" id="btn-add-classe" class="btn d-flex justify-content-end" href="{{ path('add_classe') }}" role="button"><i class="fa-solid fa-circle-plus"></i></a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Libelle
+                    </th>
+                    <th>
+                        Filieres
+                    </th>
+                    <th>
+                        Niveaux
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for classes in classe %}
+                    <tr>
+                        <td scope="row">
+                            {{ classes.libelle }}
+                        </td>
+                        <td>
+                            {{ classes.niveau }}
+                        </td>
+                        <td>
+                            {{ classes.filiere }}
+                        </td>
+                        <td>
+                            <a name="" id="" href="{{ path("classe_delete",{"id":classes.id}) }}"><i class="fa-solid fa-trash-can"></i></a>
+                            <a name="" id="" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

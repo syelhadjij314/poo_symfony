@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Hello ClasseController!{% endblock %} #}
+
+{% block body %}
+
+<div class="container">
+<h1>Ajouter une Classe </h1>
+        {{ form_start(form) }}
+        {{ form_row (form.libelle,{'attr':{'placeholder':'libelle'}}) }}
+        {{ form_row (form.niveau,{'attr':{'placeholder':'niveau'}}) }}
+        {{ form_row (form.filiere,{'attr':{'placeholder':'filiere'}}) }}
+
+        <input type="submit" class="btn btn-primary btn-add" value="Ajouter">
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
